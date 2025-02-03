@@ -9,7 +9,7 @@ namespace exercise.wwwapi.Data
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
             var configuration = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
-            _connectionString = configuration.GetValue<string>("ConnectionStrings:DefaultConnectionString")!;
+            _connectionString = configuration.GetValue<string>("ConnectionStrings:LocalDockerInstance");//("ConnectionStrings:DefaultConnectionString")!;
             this.Database.EnsureCreated();
         }
 
